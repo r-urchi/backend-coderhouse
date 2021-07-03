@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    
+    <script>
+// Consigna: 
+// 1) Declarar una función constructora llamada Usuario que reciba: nombre (string), apellido (string), libros (array de objetos) y mascotas (array de strings). 
+// Implementar las propiedades instancia desde los valores recibidos como argumento y los siguientes métodos en su prototipo:
+// getFullName: debe retornar un string con el nombre y apellido del usuario. (utilizar template string).
+// addMascota: debe agregar una mascota (mascota) al arreglo de mascotas del usuario. no debe retornar nada.
+// getMascotas: debe retornar la cantidad de mascotas que tiene el usuario.
+// addBook: recibe un string 'book' y un string 'autor' y debe agregar un objeto: { nombre: book, autor: autor} al arreglo de libros del usuario. No debe retornar nada.      
+// getBooks: debe retornar un arreglo con sólo los nombres del arreglo de libros del usuario.  
+// Crear un objeto llamado usuario a partir de la función constructora, con valores que permitan probar todos sus métodos. Hacer el test completo empleando la consola del navegador.
+
+
+        class Usuario {
+            constructor(nombre, apellido, libros, mascotas) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.libros = libros;
+                this.mascotas = mascotas;
+            }
+
+            getFullName() {
+                return `El nombre completo es: ${this.nombre} ${this.apellido}`;
+            };
+
+            addMascota(nuevaMascota) {
+                this.mascotas.push(nuevaMascota)
+                console.log(this.mascotas)
+            };
+
+            getMascotas() {
+                return this.mascotas.length;
+            };
+
+            addBook(nuevoLibro) {
+                this.libros.push(nuevoLibro)
+                console.log(this.libros)
+            };
+
+            getBooks() {
+                this.libros.forEach(libro => {
+                    console.log(libro.nombre) 
+                });
+            };
+
+        }
+
+        const newUser = new Usuario('Ramón', 'Urchipia', [{nombre: 'Fight Club', autor: 'Chuck Palahniuk'}], ['Cuquito'])
+    
+        console.log(newUser.getFullName());
+        newUser.addMascota('Cucu');
+        console.log(newUser.getMascotas());
+        newUser.addBook({nombre: 'The Shining', autor: 'Stephen King'});
+        newUser.getBooks();
+
+    </script>
+
+</body>
+</html>

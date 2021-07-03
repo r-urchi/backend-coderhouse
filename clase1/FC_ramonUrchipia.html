@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function constructor</title>
+</head>
+<body>
+    
+    <script>
+
+        function Usuario(nombre, apellido, libros, mascotas) {
+
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.libros = {nombre: '', autor: ''};
+            this.mascotas = [];
+
+            this.getFullName = function() {
+                return `El nombre completo es: ${nombre} ${apellido}`;
+            };
+
+            this.addMascota = function(nuevaMascota) {
+                mascotas.push(nuevaMascota)
+                console.log(mascotas)
+            };
+
+            this.getMascotas = function() {
+                return mascotas.length;
+            };
+
+            this.addBook = function(nuevoLibro) {
+                libros.push(nuevoLibro)
+                console.log(libros)
+            };
+
+            this.getBooks = function() {
+                libros.forEach(libro => {
+                    console.log(libro.nombre) 
+                });
+            };
+            
+        }
+
+        const newUser = new Usuario('Ramón', 'Urchipia', [{nombre: 'Fight Club', autor: 'Chuck Palahniuk'}], ['Cuquito'])
+
+        console.log(newUser.getFullName());
+        newUser.addMascota('Cucu');
+        console.log(newUser.getMascotas());
+        newUser.addBook({nombre: 'The Shining', autor: 'Stephen King'});
+        newUser.getBooks();
+
+    </script>
+
+</body>
+</html>
