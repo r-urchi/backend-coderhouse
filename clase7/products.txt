@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "TV",
+    "price": 28000,
+    "thumbnail": "https://th.bing.com/th/id/OIP.wc_AcGs1gJ9kcfOTetHjNgHaHa?pid=ImgDet&rs=1"
+  },
+  {
+    "id": 2,
+    "title": "Laptop",
+    "price": 64500,
+    "thumbnail": "https://th.bing.com/th/id/OIP.y0yjKeyE-qE0URV8t1qCZAHaEo?pid=ImgDet&rs=1"
+  },
+  {
+    "id": 3,
+    "title": "Smartphone",
+    "price": 47300,
+    "thumbnail": "https://th.bing.com/th/id/OIP.QGNUJBEED2Yq_vAkVrf88gHaFe?pid=ImgDet&rs=1"
+  }
+]
