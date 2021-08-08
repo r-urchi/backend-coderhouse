@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="title">Lista items</h2>
+
+    <table class="table">
+        <thead class="thead">
+            <tr class="thead__tr">
+                <th class="thead__th">Producto</th>
+                <th class="thead__th">Precio</th>
+                <th class="thead__th">Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% response.forEach(element => { %>
+                <tr class="tr">
+                    <th class="tr__th"><%= element.title %></th>
+                    <td class="tr__td"><%= element.price %></td>
+                    <td class="tr__td"><img src="<%= element.thumbnail %>"></td>
+                </tr>
+            <% }) %>
+
+        </tbody>
+    </table>
+
+</body>
+</html>
