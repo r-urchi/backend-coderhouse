@@ -1,0 +1,19 @@
+h2(class="title")="Lista items"
+
+table(class="table")
+    thead(class="thead")
+        tr(class="thead__tr")
+            th(class="thead__th")="Producto"
+            th(class="thead__th")="Precio"
+            th(class="thead__th")="Imagen"
+    tbody
+        {{#each response}}
+        tr( class="tr")
+            th(class="tr__th")={{title}}
+            td(class="tr__td")={{price}}
+            td(class="tr__td")
+                img(src="{{thumbnail}}")
+        /tr
+        {{/each}}
+    /tbody
+/table

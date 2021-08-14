@@ -1,0 +1,20 @@
+<h2>Lista items</h2>
+
+<table class="table">
+    <thead class="table__">
+        <tr>
+            <th class="col">Producto</th>
+            <th class="col">Precio</th>
+            <th class="col">Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each response}}
+        <tr>
+            <th class="row">{{title}}</th>
+            <td>{{price}}</td>
+            <td><img src="{{thumbnail}}"></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

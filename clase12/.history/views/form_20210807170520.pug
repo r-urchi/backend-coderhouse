@@ -1,0 +1,22 @@
+html 
+  head 
+    title="Desafí 11 - PUG"
+  body
+    h1(class="title")="PRODUCTOS FORM"
+
+
+form(action="/api/productos/guardar" method="post" class="form")
+  ul
+    li
+      label(for="name")="Título:"
+      input(type="text" id="name" name="title")
+    li
+      label(for="name")="Precio:"
+      input(type="number" id="price" name="price")
+
+    li
+      label(for="name")="Descripción:"
+      input(type="text" id="thumbnail" name="thumbnail")
+
+    li(class="button")
+      button(type="submit" id="enviar")="Guardar producto"

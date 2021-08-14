@@ -1,0 +1,28 @@
+html 
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/styles.css")
+    title="Desafío 11 - PUG"
+    body
+      h1(class="title")="PRODUCTOS FORM"
+      form(onsubmit="return addMessage(this)" class="form")
+        ul
+          li
+            label(for="name")="Título:"
+            input(type="text" id="name" name="title")
+          li
+            label(for="name")="Precio:"
+            input(type="number" id="price" name="price")
+
+          li
+            label(for="name")="Descripción:"
+            input(type="text" id="thumbnail" name="thumbnail")
+
+          li(class="button")
+            button(type="submit" id="enviar")="Guardar producto"
+
+      <div (id="messages")
+      script(src="/socket.io/socket.io.js")
+      script(src="main.js")
