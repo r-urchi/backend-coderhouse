@@ -25,5 +25,9 @@
     "@babel/core": "^7.14.8",
     "@babel/node": "^7.14.7",
     "@babel/preset-env": "^7.14.8"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   }
 }

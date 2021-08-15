@@ -3,6 +3,10 @@ import path from 'path';
 import * as http from 'http';
 import io from 'socket.io';
 import routerProducts from './routes/routerProductos';
+import fs from 'fs/promises';
+
+const pathTxt = './products.txt';
+const pathTxt2 = './comments.txt';
 
 //EXPRESS
 const app = express();
@@ -24,10 +28,6 @@ app.get('/', (req, res) => {
     res.render('index');
   });
 
-// app.get('/mensajes', (req, res) => {
-//     res.render('mensajes');
-//   });
-
 const myWSServer = io(myServer);
 
 const messages = [];
@@ -37,14 +37,17 @@ myWSServer.on('connection', socket => {
 
     console.log('Un cliente se ha conectado');
 
-    socket.on('new-message', data => {
+        socket.on('new-message', data => {
 
         const newMessage = {
             socketId: socket.client.id,
             message: data,
         };
         console.log(newMessage)
+
         messages.push(newMessage);
+        fs.writeFile(pathTxt, JSON.stringify(messages, null, 2));
+
         myWSServer.emit('messages', messages)
     });
 
@@ -61,7 +64,10 @@ myWSServer.on('connection', socket => {
             comment: data,
         };
         console.log(newComment)
+
         comments.push(newComment);
+        fs.writeFile(pathTxt2, JSON.stringify(comments, null, 2));
+        
         myWSServer.emit('comments', comments)
     });
 
