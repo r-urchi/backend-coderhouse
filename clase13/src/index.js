@@ -24,9 +24,9 @@ app.get('/', (req, res) => {
     res.render('index');
   });
 
-app.get('/mensajes', (req, res) => {
-    res.render('mensajes');
-  });
+// app.get('/mensajes', (req, res) => {
+//     res.render('mensajes');
+//   });
 
 const myWSServer = io(myServer);
 
@@ -51,7 +51,7 @@ myWSServer.on('connection', socket => {
     socket.on('askData', data => {
         console.log('ME LLEGO DATA');
         socket.emit('messages', messages)
-    });
+    }); 
 
 
     socket.on('new-comment', data => {

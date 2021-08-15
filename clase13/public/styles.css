@@ -22,7 +22,7 @@ li{
     padding: 1rem auto;
 }
 
-#enviar{
+#enviar, #enviar-comment{
     margin: 1rem;
     border: none;
     padding: 1rem;
@@ -66,4 +66,29 @@ th, td{
 
 .tr__th{
     padding-bottom: 1rem;
+}
+
+.comentarios-container{
+    margin-top: 2rem;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.comment{
+    font-style: italic;
+    color: green;
+}
+
+.comment-blue{
+    font-style: normal;
+    color: blue;
+}
+
+.comment-hour{
+    font-style: normal;
+    font-weight: normal;
+    color: brown;
 }
